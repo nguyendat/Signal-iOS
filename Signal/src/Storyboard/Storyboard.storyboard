@@ -309,13 +309,13 @@
                                                 <constraint firstAttribute="width" secondItem="7IV-AJ-aCS" secondAttribute="height" multiplier="1:1" id="XYc-uT-wt9"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+13235551234" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmV-r0-09O">
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edward Snowden" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCt-Cp-bFX" userLabel="Name">
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edward Snowden" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCt-Cp-bFX" userLabel="Edward Snowden">
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+13235551234" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmV-r0-09O" userLabel="Signal ID">
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -421,6 +421,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Conversation Settings" id="3Gh-BY-xJE"/>
+                    <connections>
+                        <outlet property="avatar" destination="7IV-AJ-aCS" id="9LA-fh-tIF"/>
+                        <outlet property="configureDisappearingMessagesCell" destination="3dL-aW-P1A" id="eCu-9Q-SGV"/>
+                        <outlet property="contactName" destination="qCt-Cp-bFX" id="Din-FG-Xxc"/>
+                        <outlet property="contactNumber" destination="tmV-r0-09O" id="Rev-h3-h6l"/>
+                        <outlet property="name" destination="qCt-Cp-bFX" id="5X1-Ll-3EY"/>
+                        <outlet property="nameLabel" destination="qCt-Cp-bFX" id="7yI-kh-cN6"/>
+                        <outlet property="signalId" destination="tmV-r0-09O" id="Cmq-Sx-bAf"/>
+                        <outlet property="signalIdLabel" destination="tmV-r0-09O" id="jFP-hM-j3f"/>
+                        <outlet property="toggleDisappearingMessagesCell" destination="U6h-Xo-HEv" id="a3T-jn-u7Z"/>
+                        <outlet property="verifyPrivacyCell" destination="Dzg-XO-ciX" id="kKQ-3F-uIp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ftx-dN-loa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

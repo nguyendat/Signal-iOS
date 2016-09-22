@@ -22,6 +22,7 @@
 #import "OWSErrorMessage.h"
 #import "OWSInfoMessage.h"
 #import "OWSMessagesBubblesSizeCalculator.h"
+#import "OWSContactInfoTableViewController.h"
 #import "PhoneManager.h"
 #import "PreferencesUtil.h"
 #import "ShowGroupMembersViewController.h"
@@ -1504,7 +1505,16 @@ typedef enum : NSUInteger {
     } else if ([segue.identifier isEqualToString:OWSMessagesViewControllerSegueShowGroupMembers]) {
         ShowGroupMembersViewController *vc = [segue destinationViewController];
         [vc configWithThread:(TSGroupThread *)self.thread];
+    } else if ([segue.destinationViewController isKindOfClass:[OWSContactInfoTableViewController class]]) {
+        // TODO flesh this out. reduce duplication... can this stuff be wrapped up in a recipient object?
+        OWSContactInfoTableViewController *controller = (OWSContactInfoTableViewController *)segue.destinationViewController;
+        NSString *contactName = [self.contactsManager nameStringForPhoneIdentifier:fingerprint.theirStableId];
+        [controller configureWithThread:self.thread
+                            contactName:contactName
+                               signalId:signalId
+                            avatarImage:avatarImage];
     }
+
 }
 
 
