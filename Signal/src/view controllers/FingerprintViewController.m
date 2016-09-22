@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *contactName;
 @property (strong, nonatomic) OWSQRCodeScanningViewController *qrScanningController;
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *dismissModalButton;
 @property (strong, nonatomic) IBOutlet UIView *qrScanningView;
 @property (strong, nonatomic) IBOutlet UIView *scanningContainer;
 @property (strong, nonatomic) IBOutlet UIView *instructionsContainer;
@@ -35,9 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet UIImageView *privacyVerificationQRCode;
 @property (strong, nonatomic) IBOutlet UILabel *privacyVerificationFingerprint;
 @property (strong, nonatomic) IBOutlet UILabel *instructionsLabel;
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UIButton *scanButton;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *qrCodeCenterConstraint;
 
 @end
 
@@ -50,6 +49,13 @@ NS_ASSUME_NONNULL_BEGIN
     self.thread = thread;
     self.fingerprint = fingerprint;
     self.contactName = contactName;
+
+    // TODO - pass in.
+    BOOL presentedModally = thread != nil;
+    if (presentedModally) {
+        self.navigationItem.leftBarButtonItem = self.dismissModalButton;
+    }
+
 }
 
 - (void)viewDidLoad
@@ -67,7 +73,8 @@ NS_ASSUME_NONNULL_BEGIN
     self.qrScanningView.frame = newFrame;
     // END HACK to get full width preview layer
 
-    self.titleLabel.text = NSLocalizedString(@"PRIVACY_VERIFICATION_TITLE", @"Navbar title");
+
+    self.title = NSLocalizedString(@"PRIVACY_VERIFICATION_TITLE", @"Navbar title");
     NSString *instructionsFormat = NSLocalizedString(@"PRIVACY_VERIFICATION_INSTRUCTIONS",
         @"Paragraph(s) shown alongside keying material when verifying privacy with {{contact name}}");
     self.instructionsLabel.text = [NSString stringWithFormat:instructionsFormat, self.contactName];
@@ -156,7 +163,7 @@ NS_ASSUME_NONNULL_BEGIN
 
     // Shift QRCode up within it's own frame, while shifting it's whole
     // frame down.
-    self.qrCodeCenterConstraint.constant = 0.0f;
+//    self.qrCodeTopConstraint.constant = 16.0f;
     [UIView animateWithDuration:0.4
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseInOut

@@ -1478,14 +1478,26 @@ typedef enum : NSUInteger {
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:OWSMessagesViewControllerSegueShowFingerprint]) {
-        FingerprintViewController *vc = [segue destinationViewController];
-        if ([sender isKindOfClass:[OWSFingerprint class]]) {
-            OWSFingerprint *fingerprint = (OWSFingerprint *)sender;
-            NSString *contactName = [self.contactsManager nameStringForPhoneIdentifier:fingerprint.theirStableId];
-            [vc configureWithThread:self.thread fingerprint:fingerprint contactName:contactName];
-        } else {
-            DDLogError(@"%@ Attempting to segueu to fingerprint VC without a valid fingerprint: %@", self.tag, sender);
+        if (![segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+            DDLogError(@"%@ Unexpected destination VC: %@", self.tag, segue.destinationViewController);
+            return;
         }
+        UINavigationController *navController = segue.destinationViewController;
+
+        if (![navController.topViewController isKindOfClass:[FingerprintViewController class]]) {
+            DDLogError(@"%@ Expected Fingerprint VC but got: %@", self.tag, navController.topViewController);
+            return;
+        }
+        FingerprintViewController *vc = (FingerprintViewController *)navController.topViewController;
+
+        if (![sender isKindOfClass:[OWSFingerprint class]]) {
+            DDLogError(@"%@ Attempting to segue to fingerprint VC without a valid fingerprint: %@", self.tag, sender);
+            return;
+        }
+        OWSFingerprint *fingerprint = (OWSFingerprint *)sender;
+
+        NSString *contactName = [self.contactsManager nameStringForPhoneIdentifier:fingerprint.theirStableId];
+        [vc configureWithThread:self.thread fingerprint:fingerprint contactName:contactName];
     } else if ([segue.identifier isEqualToString:OWSMessagesViewControllerSegueUpdateGroup]) {
         NewGroupViewController *vc = [segue destinationViewController];
         [vc configWithThread:(TSGroupThread *)self.thread];
