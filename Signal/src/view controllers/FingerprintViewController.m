@@ -55,7 +55,6 @@ NS_ASSUME_NONNULL_BEGIN
     if (presentedModally) {
         self.navigationItem.leftBarButtonItem = self.dismissModalButton;
     }
-
 }
 
 - (void)viewDidLoad
@@ -72,7 +71,6 @@ NS_ASSUME_NONNULL_BEGIN
         self.view.frame.size.height / 2.0f - oldFrame.origin.y);
     self.qrScanningView.frame = newFrame;
     // END HACK to get full width preview layer
-
 
     self.title = NSLocalizedString(@"PRIVACY_VERIFICATION_TITLE", @"Navbar title");
     NSString *instructionsFormat = NSLocalizedString(@"PRIVACY_VERIFICATION_INSTRUCTIONS",
@@ -163,7 +161,7 @@ NS_ASSUME_NONNULL_BEGIN
 
     // Shift QRCode up within it's own frame, while shifting it's whole
     // frame down.
-//    self.qrCodeTopConstraint.constant = 16.0f;
+    //    self.qrCodeTopConstraint.constant = 16.0f;
     [UIView animateWithDuration:0.4
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseInOut

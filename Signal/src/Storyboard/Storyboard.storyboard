@@ -293,7 +293,7 @@
         <!--Contact Information-->
         <scene sceneID="Flt-X5-Amc">
             <objects>
-                <tableViewController title="Contact Information" id="4oU-Rv-yJi" sceneMemberID="viewController">
+                <tableViewController title="Contact Information" id="4oU-Rv-yJi" customClass="OWSContactInfoTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dgp-fo-Lyr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

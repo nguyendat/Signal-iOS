@@ -10,6 +10,8 @@
 		0DD55B166906AF3368995978 /* libPods-Signal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD5E19DD23200E7926EEA7 /* libPods-Signal.a */; };
 		30209C98DABCE82064B4EAF5 /* libPods-SignalTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A33D3C7EB4B17BDBD47F0FCC /* libPods-SignalTests.a */; };
 		4520D8D51D417D8E00123472 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4520D8D41D417D8E00123472 /* Photos.framework */; };
+		452E3C8E1D935C77002A45B0 /* OWSContactInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452E3C8D1D935C77002A45B0 /* OWSContactInfoTableViewController.m */; };
+		452E3C8F1D935C77002A45B0 /* OWSContactInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452E3C8D1D935C77002A45B0 /* OWSContactInfoTableViewController.m */; };
 		453D28B31D32B87100D523F0 /* OWSErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 453D28B01D32B87100D523F0 /* OWSErrorMessage.m */; };
 		453D28B41D32B87100D523F0 /* OWSInfoMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 453D28B21D32B87100D523F0 /* OWSInfoMessage.m */; };
 		453D28B71D32BA5F00D523F0 /* OWSDisplayedMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 453D28B61D32BA5F00D523F0 /* OWSDisplayedMessage.m */; };
@@ -512,6 +514,8 @@
 /* Begin PBXFileReference section */
 		4520D8D41D417D8E00123472 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		4526BD481CA61C8D00166BC8 /* OWSMessageEditing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWSMessageEditing.h; sourceTree = "<group>"; };
+		452E3C8C1D935C77002A45B0 /* OWSContactInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWSContactInfoTableViewController.h; sourceTree = "<group>"; };
+		452E3C8D1D935C77002A45B0 /* OWSContactInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWSContactInfoTableViewController.m; sourceTree = "<group>"; };
 		453CC0361D08E1A60040EBA3 /* sn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sn; path = translations/sn.lproj/Localizable.strings; sourceTree = "<group>"; };
 		453D28AF1D32B87100D523F0 /* OWSErrorMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWSErrorMessage.h; sourceTree = "<group>"; };
 		453D28B01D32B87100D523F0 /* OWSErrorMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWSErrorMessage.m; sourceTree = "<group>"; };
@@ -2280,6 +2284,8 @@
 				FCFD256E1A151BCB00F4C644 /* NewGroupViewController.m */,
 				FC4FA0241A1B9DC600DA100A /* SignalsNavigationController.h */,
 				FC4FA0251A1B9DC600DA100A /* SignalsNavigationController.m */,
+				452E3C8C1D935C77002A45B0 /* OWSContactInfoTableViewController.h */,
+				452E3C8D1D935C77002A45B0 /* OWSContactInfoTableViewController.m */,
 			);
 			name = Signals;
 			sourceTree = "<group>";
@@ -2751,6 +2757,7 @@
 				76EB05A218170B33006006FC /* IpEndPoint.m in Sources */,
 				E197B61A18BBEC1A00F073E5 /* SpeexCodec.m in Sources */,
 				76EB05F018170B33006006FC /* PhoneManager.m in Sources */,
+				452E3C8E1D935C77002A45B0 /* OWSContactInfoTableViewController.m in Sources */,
 				E197B60F18BBEC1A00F073E5 /* EncodedAudioFrame.m in Sources */,
 				76EB061818170B33006006FC /* AnonymousValueLogger.m in Sources */,
 				76EB05E618170B33006006FC /* CallController.m in Sources */,
@@ -3001,6 +3008,7 @@
 				B660F6DB1C29868000687D6E /* FunctionalUtilTest.m in Sources */,
 				B660F6CF1C29868000687D6E /* SessionDescriptorTest.m in Sources */,
 				B660F6C81C29868000687D6E /* PregeneratedKeyAgreementParticipantProtocol.m in Sources */,
+				452E3C8F1D935C77002A45B0 /* OWSContactInfoTableViewController.m in Sources */,
 				B660F6BC1C29868000687D6E /* DnsManagerTest.m in Sources */,
 				B660F6B61C29868000687D6E /* AudioRemoteIOTest.m in Sources */,
 				B660F6D71C29868000687D6E /* Crc32Test.m in Sources */,
